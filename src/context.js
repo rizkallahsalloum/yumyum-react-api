@@ -15,6 +15,7 @@ const AppProvider = ({ children }) => {
   const [query, setQuery] = useState('middle eastern');
   const [searchTerm, setSearchTerm] = useState('');
   const { isLoading, error, data: recipes } = useFetch(`&query=${query}`);
+
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   const addRecipeToFavorites = (recipe) => {

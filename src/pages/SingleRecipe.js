@@ -4,10 +4,13 @@ import { useParams, Link } from 'react-router-dom';
 import HeaderInside from '../components/HeaderInside';
 import { Container, FlexContainer } from '../global-styles';
 import styled from 'styled-components';
-import { LinkButton } from '../components/Button';
+import { DefaultButton } from '../components/Button';
 import { useHistory } from 'react-router-dom';
+import { useTitle } from '../Hooks';
 
 const SingleRecipe = () => {
+  useTitle('YumYum - Recipes');
+
   const { id } = useParams();
   const API_ENDPOINT_INFO = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}`;
   const [recipe, setRecipe] = useState({});
@@ -16,9 +19,9 @@ const SingleRecipe = () => {
 
   const history = useHistory();
 
-  const goBack = () => {
-    history.goBack();
-  };
+  // const goBack = () => {
+  //   history.goBack();
+  // };
   const fetchRecipe = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
@@ -66,7 +69,9 @@ const SingleRecipe = () => {
             </ul>
             <p dangerouslySetInnerHTML={{ __html: summary }}></p>
             <p dangerouslySetInnerHTML={{ __html: instructions }}></p>
-            <LinkButton onClick={goBack}>back</LinkButton>
+            <DefaultButton onClick={history.goBack} large>
+              Back
+            </DefaultButton>
           </RecipeInfo>
         </FlexContainerRow>
       </Container>

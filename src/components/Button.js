@@ -5,12 +5,20 @@ export const DefaultButton = styled.button`
   color: var(--clr-white);
   border: none;
   border-radius: 0.25rem;
+  padding: 1rem 3rem;
+  margin-right: 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.4rem;
   text-transform: capitalize;
+  transition: var(--transition);
   cursor: pointer;
   padding: 0.25rem;
   display: block;
   width: 200px;
-  margin: 1rem;
+  &:hover {
+    background: var(--clr-primary);
+  }
   // CSS Helper function
   ${({ large }) =>
     large

@@ -16,7 +16,6 @@ function App() {
         <Route exact path="/favorites" component={Favorites} />
         <Route exact path="/about" component={About} />
         <Route exact path="/recipes/:id" component={Recipe} />
-
         <Route component={NotFoundPage} />
       </Switch>
     </Router>

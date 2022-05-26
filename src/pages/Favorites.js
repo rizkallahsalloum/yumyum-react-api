@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { useGlobalContext } from '../context';
+import { useTitle } from '../Hooks';
 import RecipeCard from '../components/RecipeCard';
 import HeaderInside from '../components/HeaderInside';
 import styled from 'styled-components';
 import { Container, FlexContainer, TitlePage } from '../global-styles';
 const Favorites = () => {
+  useTitle('YumYum - Favorites');
   const { favorites } = useGlobalContext(useContext);
 
   return (
@@ -17,8 +19,8 @@ const Favorites = () => {
 
             {favorites.length > 0 ? (
               <FlexContainer key={favorites.id}>
-                {favorites.map((recipe) => (
-                  <RecipeCard recipe={recipe} />
+                {favorites.map((recipe, id) => (
+                  <RecipeCard recipe={recipe} key={id} />
                 ))}
               </FlexContainer>
             ) : (
