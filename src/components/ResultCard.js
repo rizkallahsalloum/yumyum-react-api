@@ -43,7 +43,7 @@ const ResultCard = ({ recipe, className }) => {
 
 export const CardStyled = styled.div`
   width: 50vw;
-  max-width: 300px;
+  width: 270px;
   @media screen and (max-width: 720px) {
     width: 100%;
     max-width: 100%;

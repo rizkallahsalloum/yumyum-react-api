@@ -11,10 +11,10 @@ const Home = () => {
   useTitle('YumYum - Recipes for you');
   const { recipes, addFavoriteRecipe } = useGlobalContext();
   return (
-    <main>
+    <>
       <Header />
       <Recipes recipes={recipes} handleFavoritesClick={addFavoriteRecipe} />
-    </main>
+    </>
   );
 };
 

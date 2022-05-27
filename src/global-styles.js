@@ -3,30 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-*,
-  *::after,
-  *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-  }
-    html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    height: 100vh;
-  }
-  body {
-    font-family: var(--primary-font-family);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background: var(--clr-white);
-    height: 100vh;
-    font-size: 1.6rem;
-    margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+
+
   *:focus {
   outline: 0;
   outline: none;
@@ -66,7 +44,6 @@ export const FlexContainer = styled.div`
   flex-wrap: wrap;
   gap: 3rem;
   justify-content: ${(props) => props.justifyContent};
-
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -87,18 +64,21 @@ export const setBackground = ({
 } = {}) => {
   return `background:linear-gradient(${color},${color}), url(${img}) bottom / cover fixed no-repeat;`;
 };
-export const Container = styled.div`
-  margin: 0 15%;
+export const Container = styled.main`
+  width: 90vw;
+  max-width: var(--max-width);
+  display: grid;
+  grid-gap: 2rem;
+  gap: 2rem;
+  margin: 0 auto;
   padding-bottom: 5rem;
-  position: relative;
   z-index: 100;
   @media screen and (max-width: 1024px) {
-    margin: 0 5%;
     position: relative;
     z-index: 100;
   }
   @media screen and (max-width: 720px) {
-    margin: 0 5%;
+    /* grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); */
     position: relative;
     z-index: 100;
   }

@@ -16,9 +16,7 @@ const Recipes = ({ recipes }) => {
       <Container>
         <FlexContainer className="spacer-20">
           {recipes.map((recipe) => (
-            <div key={recipe.id}>
-              <ResultCard recipe={recipe} />
-            </div>
+            <ResultCard recipe={recipe} key={recipe.id} />
           ))}
         </FlexContainer>
       </Container>

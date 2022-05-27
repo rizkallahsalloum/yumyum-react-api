@@ -19,9 +19,6 @@ const SingleRecipe = () => {
 
   const history = useHistory();
 
-  // const goBack = () => {
-  //   history.goBack();
-  // };
   const fetchRecipe = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
